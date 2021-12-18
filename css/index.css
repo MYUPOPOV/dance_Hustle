@@ -9,3 +9,40 @@
 	display: table;
 	clear: both;
 }
+
+.video {
+	height: 200px;
+	border: solid;
+	/* background: rgb(255, 255, 255); */
+}
+
+.variant {
+	height: 50px;
+	border: solid;
+	/* border-radius: 20px; */
+}
+
+.column-name {
+	height: 50px;
+	border: solid;
+	background: rgb(247, 253, 192);
+}
+
+.current-element {
+	background: rgb(164, 224, 196);
+}
+
+.current-element-btn {
+	height: 100%;
+	width: 100%;
+}
+
+.preview-btn {
+	height: 100%;
+	width: 80%;
+}
+
+.go-btn {
+	height: 100%;
+	width: 19%;
+}

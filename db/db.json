@@ -1,12 +1,14 @@
 {
   "db": [
     {
-      "moveName": "Базовый шаг",
       "id" : "0101",
+      "elementName": "Базовый шаг",
       "img": "img/image-122.jpg",
       "difficulty": "simple",
-      "previousMove": [],
-      "nextMove": []
+      "previousElements": [],
+      "nextElements": [],
+      "parent": "",
+      "children": ""  
     },
     {},
     {}

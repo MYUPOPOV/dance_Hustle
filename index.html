@@ -11,55 +11,93 @@
 <body>
 
   <div class="row">
-    <div class="column">
+
+
+<!--   1 колонка: Предыдущие элементы -->
+<div class="column">
       <div class='column-name'>Предыдущие элементы</div>
       <div class="video">video</div>
-      <div class="variant">
-        <button class="element-btn preview-btn">Предыдущий вариант 1</button>
-        <button class="element-btn go-btn">Перейти</button>
-      </div>
-      <div class="variant">
-        <button class="element-btn preview-btn">Предыдущий  вариант 2</button>
-        <button class="element-btn go-btn">Перейти</button>
-      </div>
-      <div class="variant">
-        <button class="element-btn preview-btn">Предыдущий  вариант 3</button>
-        <button class="element-btn go-btn">Перейти</button>
-      </div>
-    </div>
 
+  <!--     Рендер списка предыдущих элементов -->
+      <div class='element-column previous-column'>
+
+<!--         <div class="element">
+          <button class="element-btn preview-btn">Предыдущий элемент 1</button>
+          <button class="element-btn go-btn">Перейти</button>
+        </div>
+        <div class="element">
+          <button class="element-btn preview-btn">Предыдущий  элемент 2</button>
+          <button class="element-btn go-btn">Перейти</button>
+        </div>
+        <div class="element">
+          <button class="element-btn preview-btn">Предыдущий  элемент 3</button>
+          <button class="element-btn go-btn">Перейти</button>
+        </div> -->
+
+      </div>
+   <!-- / Рендер -->
+      </div>
+<!--  // 1 колонка: Предыдущие элементы -->
+  
+
+<!--   2 колонка: Текущий элемент с вариантами -->
     <div class="column">
       <div class='column-name current-element'>Название текущего элемента</div>
-      <div class="video">video</div>
-      <div class="variant">
-        <button class="current-element-btn">Украшалка 1</button>
-      </div>
-      <div class="variant">
-        <button class="current-element-btn">Украшалка 2</button>
-      </div>
-    </div>
+      <div class="video">
+        <video class="video" src="./src/videos/0101.mp4" loop autoplay></video>
 
+      </div>
+
+  <!--     Рендер списка: текущий элемент и его варианты -->
+  <div class='variant-column current-column'>
+
+    <div class="variant">
+        <button class="current-element-btn">Основной Шаг</button>
+      </div>
+
+      <div class="variant">
+        <button class="current-element-btn">Вариант 1: Шарфик</button>
+      </div>
+
+      <div class="variant">
+        <button class="current-element-btn">Вариант 2: Ван фут спин</button>
+      </div>
+      
+    </div> 
+       <!-- / Рендер -->
+  </div>
+<!--  / 2 колонка: Текущий элемент с вариантами -->
+
+
+<!--   3 колонка: Следующие элементы -->
     <div class="column">
-      <div class='column-name'>Следующий элемент</div>
+      <div class='column-name'>Следующие элементы</div>
       <div class="video">video</div>
-      <div class="variant">
-        <button class="element-btn preview-btn">Следующий вариант 1</button>
-        <button class="element-btn go-btn">Перейти</button>
-      </div>
-      <div class="variant">
-        <button class="element-btn preview-btn">Следующий вариант 2</button>
-        <button class="element-btn go-btn">Перейти</button>
-      </div>
-      <div class="variant">
-        <button class="element-btn preview-btn">Следующий вариант 3</button>
-        <button class="element-btn go-btn">Перейти</button>
-      </div>
-      <div class="variant">
-        <button class="element-btn preview-btn">Следующий вариант 4</button>
-        <button class="element-btn go-btn">Перейти</button>
-      </div>
 
+  <!--     Рендер списка следующих элементов -->
+      <div class='element-column next-column'>
+
+        <div class="element">
+          <button class="element-btn preview-btn">Перехват в "привет" (1)</button>
+          <button class="element-btn go-btn">Перейти</button>
+        </div>
+        <div class="element">
+          <button class="element-btn preview-btn">Корзинка  (4)</button>
+          <button class="element-btn go-btn">Перейти</button>
+        </div>
+        <div class="element">
+          <button class="element-btn preview-btn">Заход в обычную американку (10)</button>
+          <button class="element-btn go-btn">Перейти</button>
+        </div>
+        <div class="element">
+          <button class="element-btn preview-btn">Заход в американку на прямых руках</button>
+          <button class="element-btn go-btn">Перейти</button>
+        </div>
+
+      </div>
+       <!-- / Рендер -->
     </div>
+    <!--   3 колонка: Следующие элементы -->
 
   </div>
 </body>

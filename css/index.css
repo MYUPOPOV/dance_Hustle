@@ -16,6 +16,12 @@
 	/* background: rgb(255, 255, 255); */
 }
 
+.element {
+	height: 50px;
+	border: solid;
+	/* border-radius: 20px; */
+}
+
 .variant {
 	height: 50px;
 	border: solid;
@@ -25,6 +31,10 @@
 .column-name {
 	height: 50px;
 	border: solid;
+	background: rgb(247, 253, 192);
+}
+
+.element-column {
 	background: rgb(247, 253, 192);
 }
 

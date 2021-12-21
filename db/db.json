@@ -1,17 +1,83 @@
 {
   "db": [
+   
     {
       "id" : "0101",
       "elementName": "Базовый шаг",
-      "img": "img/image-122.jpg",
+      "img": "",
       "difficulty": "simple",
       "previousElements": [],
       "nextElements": [],
       "parent": "",
+      "children": ["0102", "0103", "0104"]  
+    },
+    {
+      "id" : "0102",
+      "elementName": "Шарфик",
+      "img": "",
+      "difficulty": "simple",
+      "previousElements": [],
+      "nextElements": [],
+      "parent": "0101",
       "children": ""  
     },
-    {},
+    {
+      "id" : "0103",
+      "elementName": "ВанФутСпин",
+      "img": "",
+      "difficulty": "simple",
+      "previousElements": [],
+      "nextElements": [],
+      "parent": "0101",
+      "children": ""  
+    },
+    {
+      "id" : "0104",
+      "elementName": "Верхняя сменка",
+      "img": "",
+      "difficulty": "simple",
+      "previousElements": [],
+      "nextElements": [],
+      "parent": "0101",
+      "children": ""  
+    },
+    {
+      "id" : "0105",
+      "elementName": "Сменка Вращение партнерши",
+      "img": "",
+      "difficulty": "simple",
+      "previousElements": [],
+      "nextElements": [],
+      "parent": "0101",
+      "children": ""  
+    },
+
+
+
+
+    {
+      "id" : "0201",
+      "elementName": "Нижняя сменка",
+      "img": "",
+      "difficulty": "simple",
+      "previousElements": ["0101"],
+      "nextElements": [],
+      "parent": "",
+      "children": ""  
+    },
+    {
+      "id" : "0202",
+      "elementName": "Перехват в привет",
+      "img": "",
+      "difficulty": "simple",
+      "previousElements": [],
+      "nextElements": [],
+      "parent": "0201",
+      "children": ""  
+    },
+
     {}
+
   ]
 
 }

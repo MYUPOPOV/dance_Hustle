@@ -6,7 +6,7 @@
       "img": "",
       "difficulty": "simple",
       "previousElements": [],
-      "nextElements": [],
+      "nextElements": ["0201"],
       "parent": "",
       "children": ["0102", "0103", "0104"]  
     },

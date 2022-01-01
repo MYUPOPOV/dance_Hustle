@@ -22,7 +22,7 @@
     },
     {
       "id" : "0103",
-      "elementName": "ВанФутСпин",
+      "elementName": "Спин Поворот",
       "img": "",
       "difficulty": "simple",
       "previousElements": [],

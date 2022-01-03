@@ -3,7 +3,7 @@
     {
       "id" : "01001",
       "elementName": "Базовый шаг",
-      "nextElements": ["02001", "03001"]
+      "nextElements": ["02001", "03001", "05001", "06001", "07001", "08001", "11001"]
     },
     {
       "id" : "01002",
@@ -29,7 +29,7 @@
     {
       "id" : "02001",
       "elementName": "Нижняя сменка (заход в привет)",
-      "nextElements": ["04001"]
+      "nextElements": ["04001", "09001", "01001"]
     },
     {
       "id" : "02002",
@@ -97,6 +97,143 @@
       "nextElements": ["01001"]
     },
     {
+      "id" : "05001",
+      "elementName": "Заход в Раскрытие",
+      "nextElements": ["95001", "95101", "95201"]
+    },
+    {
+      "id" : "05002",
+      "elementName": "Заход в Раскрытие с вращением партнерши",
+      "nextElements": []
+    },
+    {
+      "id" : "05003",
+      "elementName": "Шарфики в раскрытии",
+      "nextElements": []
+    },
+    {
+      "id" : "05004",
+      "elementName": "Ложный выпад партнера и врещние партнерши",
+      "nextElements": []
+    },
+    {
+      "id" : "05005",
+      "elementName": "Йо-Йо",
+      "nextElements": []
+    },
+    {
+      "id" : "95001",
+      "elementName": "Выход из Раскрытия в выход из американки: с приседанием",
+      "nextElements": ["97001"]
+    },
+    {
+      "id" : "95002",
+      "elementName": "Закрытие с прогибом партнерши",
+      "nextElements": []
+    },
+    {
+      "id" : "95003",
+      "elementName": "Бампер",
+      "nextElements": []
+    },
+    {
+      "id" : "95004",
+      "elementName": "Поддержка партнерши на противовесе",
+      "nextElements": []
+    },
+    {
+      "id" : "95101",
+      "elementName": "Выход из Раскрытия в бампер",
+      "nextElements": ["01001"]
+    },
+
+    {
+      "id" : "95201",
+      "elementName": "Выход из Раскрытия в поддержку в противовесе через Йо-Йо",
+      "nextElements": ["97101"]
+    },
+    {
+      "id" : "06001",
+      "elementName": "Заход в веревочку",
+      "nextElements": ["96001"]
+    },
+    {
+      "id" : "96001",
+      "elementName": "Выход из веревочки: простая",
+      "nextElements": ["01001"]
+    },
+
+    {
+      "id" : "96002",
+      "elementName": "Простая с пролазом партнерши",
+      "nextElements": []
+    },
+    {
+      "id" : "96003",
+      "elementName": "Простая с пролазом партнера",
+      "nextElements": []
+    },
+    {
+      "id" : "96004",
+      "elementName": "Сложная 1",
+      "nextElements": []
+    },
+    {
+      "id" : "96005",
+      "elementName": "Сложная 2",
+      "nextElements": []
+    },
+    {
+      "id" : "96006",
+      "elementName": "Сложная 3",
+      "nextElements": []
+    },
+    {
+      "id" : "07001",
+      "elementName": "Заход в обычную американку",
+      "nextElements": ["97001"]
+    },
+    {
+      "id" : "97001",
+      "elementName": "Выход из обычной американки на базовый шаг",
+      "nextElements": ["01001"]
+    },
+    {
+      "id" : "97101",
+      "elementName": "Выход из обычной американки в противовес",
+      "nextElements": ["01001"]
+    },
+    {
+      "id" : "08001",
+      "elementName": "Заход в американку на прямых руках",
+      "nextElements": ["98001"]
+    },
+    {
+      "id" : "98001",
+      "elementName": "Выход из американки на прямых руках",
+      "nextElements": ["01001"]
+    },
+    {
+      "id" : "09001",
+      "elementName": "Заход в американку в привете",
+      "nextElements": ["99001"]
+    },
+    {
+      "id" : "99001",
+      "elementName": "Выход из американки в привете",
+      "nextElements": ["02001"]
+    },
+    {
+      "id" : "11001",
+      "elementName": "Заход в променад",
+      "nextElements": ["81001"]
+    },
+    {
+      "id" : "81001",
+      "elementName": "Выход из променада",
+      "nextElements": ["01001"]
+    },
+    {
       "id" : "00000",
       "elementName": "",
       "nextElements": []
@@ -106,6 +243,19 @@
       "elementName": "",
       "nextElements": []
     },
+    {
+      "id" : "00000",
+      "elementName": "",
+      "nextElements": []
+    },
+    {
+      "id" : "00000",
+      "elementName": "",
+      "nextElements": []
+    },
+
+
+
     {
       "id" : "00000",
       "elementName": "",

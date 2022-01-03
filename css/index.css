@@ -54,7 +54,7 @@ body {
 	/* background: #6edfa6; */
 	border-radius: 10px;
 	font-weight: 400;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 .current-element-variant-btn {
@@ -64,7 +64,7 @@ body {
 	/* background: #f5f591; */
 	border-radius: 10px;
 	font-weight: 400;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 .next-element {
@@ -78,7 +78,7 @@ body {
 	background: rgb(160, 220, 190);
 	border-radius: 10px;
 	font-weight: 400;
-	font-size: 1.2rem;
+	font-size: 1rem;
 }
 
 .go-element-btn {

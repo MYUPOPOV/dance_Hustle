@@ -38,6 +38,10 @@ body {
 	border-radius: 10px;
 }
 
+.video-frame {
+	height: 100%;
+}
+
 .element-column {
 	align-items: center;
 }

@@ -39,7 +39,7 @@ body {
 }
 
 .element-column {
-	/* background: rgb(250, 250, 190); */
+	align-items: center;
 }
 
 .current-element {

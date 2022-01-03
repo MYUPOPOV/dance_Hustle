@@ -107,18 +107,21 @@ const renderNextElements = (array) => {
 		btnMouseEnterLeave.bind(element)('preview-element-btn', '#A0DCBE', '#6edfa6');
 		btnMouseEnterLeave.bind(element)('go-element-btn', '#FAFABE', '#f5f591');
 
+		/* Перезагрузка страницы при нажатии на шапку таблицы */
 		element.querySelector('.go-element-btn').addEventListener('click', () => {
 			clearColumns();
 			showCurrentElement(elementName, id);
 			getData([id], 'current');
 		});
-
 		nextColumn.append(element);
 	});
 };
 
 columnName.forEach((item) => {
 	item.addEventListener('click', restart);
+	item.addEventListener('mouseenter', () => {
+		item.style.cursor = 'pointer';
+	});
 });
 
 restart();

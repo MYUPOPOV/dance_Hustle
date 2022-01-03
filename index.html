@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/index.css">
   <script src="./js/renderElements.js" defer></script>
 </head>
@@ -15,7 +16,7 @@
 
 <!--   1 колонка: Предыдущие элементы -->
 <div class="column previous-column">
-      <div class='column-name'>Вариант предыдущего элемента</div>
+      <div class='column-name'>Вариант предыдущего элемента:</div>
       <div class="video">video</div>
 
   <!--     Рендер списка предыдущих элементов -->
@@ -42,7 +43,9 @@
 
 <!--   2 колонка: Текущий элемент с вариантами -->
     <div class="column current-column">
-      <div class='column-name'>Текущий элемент</div>
+      <div class='column-name'>Текущий элемент:
+       <div class='name'></div> 
+      </div>
       <div class="video">
         <video class="video" src="./db/mp4/0101.mp4" controls loop autoplay></video>
        <!--  loop controls -->
@@ -75,8 +78,12 @@
 
 <!--   3 колонка: Следующие элементы -->
     <div class="column next-column">
-      <div class='column-name'>Следующие элементы</div>
-      <div class="video">video</div>
+      <div class='column-name'>Вариант следующего элемента:
+        <div class='name'></div> 
+      </div>
+      <div class="video">
+        <video class="video" src="" controls loop autoplay></video>
+      </div>
 
   <!--     Рендер списка следующих элементов -->
       <div class='element-column'>

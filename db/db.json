@@ -3,9 +3,6 @@
     {
       "id" : "0101",
       "elementName": "Базовый шаг",
-      "img": "",
-      "difficulty": "simple",
-      "previousElements": [],
       "nextElements": ["0201"],
       "parent": "",
       "children": ["0102", "0103", "0104"]  
@@ -13,9 +10,6 @@
     {
       "id" : "0102",
       "elementName": "Шарфик",
-      "img": "",
-      "difficulty": "simple",
-      "previousElements": [],
       "nextElements": [],
       "parent": "0101",
       "children": ""  

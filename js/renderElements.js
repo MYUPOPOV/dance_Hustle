@@ -1,11 +1,8 @@
-const currentColumn = document.querySelector('.current-column > .element-column');
-const nextColumn = document.querySelector('.next-column > .element-column');
-const currentVideo = document.querySelector('.current-column > .video > video');
+/*jshint esversion: 6 */
 
-let currentElementsId = [];
+const columnName = document.querySelectorAll('.column-name');
 
-// Сначала рендерим 1 текущий элемент, потом Массив его вспомогательных, потом Массив следующих элементов
-
+// Сначала рендерим 1 текущий элемент, потом массив его вариантов, потом массив следующих элементов
 const getData = (currentElementsId, order) => {
 	fetch('db/db.json')
 		.then((res) => res.json())
@@ -21,7 +18,6 @@ const getData = (currentElementsId, order) => {
 			if (order === 'current') {
 				renderCurrentElements(array);
 			}
-
 			if (order === 'next') {
 				renderNextElements(array);
 			}
@@ -31,103 +27,98 @@ const getData = (currentElementsId, order) => {
 		});
 };
 
-const renderCurrentElements = (array) => {
-	const currentColumn = document.querySelector('.current-column');
-	array.forEach(({ id, elementName, img, difficulty, previousElements, nextElements, parent, children }) => {
-		const element = document.createElement('div');
+const restart = () => {
+	clearColumns();
+	showCurrentElement('Базовый шаг', '0101');
+	getData(['0101'], 'current');
+};
 
+const showCurrentElement = (elementName, id) => {
+	document.querySelector('.current-column > .column-name > .name').textContent = elementName;
+	const currentVideo = document.querySelector('.current-column > .video > video');
+	currentVideo.setAttribute('src', `./db/mp4/${id}.mp4`);
+};
+
+const showNextElement = (elementName, id) => {
+	document.querySelector('.next-column > .column-name > .name').textContent = elementName;
+	const nextVideo = document.querySelector('.next-column > .video > video');
+	nextVideo.setAttribute('src', `./db/mp4/${id}.mp4`);
+};
+
+/* Очистка всех столбцов перед рендером  */
+const clearColumns = () => {
+	const currentColumnElements = document.querySelector('.current-column > .element-column');
+	const nextColumnElements = document.querySelector('.next-column > .element-column');
+	currentColumnElements.innerHTML = '';
+	nextColumnElements.innerHTML = '';
+	const nextVideo = document.querySelector('.next-column > .video > video');
+	nextVideo.setAttribute('src', `./db/mp4/0000.mp4`);
+};
+
+/* Анимация кнопок при наведении */
+const btnMouseEnterLeave = function (btnClass, colorMain, colorEnter) {
+	this.querySelector(`.${btnClass}`).addEventListener('mouseenter', (event) => {
+		event.target.style.background = colorEnter;
+	});
+	this.querySelector(`.${btnClass}`).addEventListener('mouseleave', (event) => {
+		event.target.style.background = colorMain;
+	});
+};
+
+const renderCurrentElements = (array) => {
+	const currentColumn = document.querySelector('.current-column > .element-column');
+	array.forEach(({ id, elementName, nextElements, parent, children }) => {
+		const element = document.createElement('div');
 		element.classList.add('current-element');
 
-		let btn = 'current-element-btn';
-		if (parent) {
-			btn = 'current-element-variant-btn';
+		let btnClass, colorMain, colorEnter;
+		if (!parent) {
+			btnClass = 'current-element-btn';
+			colorMain = '#A0DCBE';
+			colorEnter = '#6edfa6';
+		} else {
+			btnClass = 'current-element-variant-btn';
+			colorMain = '#FAFABE';
+			colorEnter = '#f5f591';
 		}
-
-		//+класс 'card'
-		element.innerHTML = `
-         <button class=${btn}>${elementName}</button>
-    `;
-
-		element.querySelector(`.${btn}`).addEventListener('click', (event) => {
-			console.log(event.target);
-			document.querySelector('.current-column > .column-name').textContent = 'Текущий элемент: ' + elementName;
-			const currentVideo = document.querySelector('.current-column > .video > video');
-			currentVideo.setAttribute('src', `./db/mp4/${id}.mp4`);
-			// currentElementsId = ['0101', '0102', '0103', '0104'];
-			// getData(currentElementsId);
-			// Добавляем в корзину
-		});
-		currentColumn.append(element); // Добавляем в конец меню ресторана
-
-		const childrenArray = children;
-
-		if (childrenArray) {
-			document.querySelector('.current-column > .column-name').textContent = 'Текущий элемент: ' + elementName;
-			getData(childrenArray, 'current');
+		element.innerHTML = `<button class=${btnClass}>${elementName}</button>`;
+		element.querySelector(`.${btnClass}`).addEventListener('click', () => showCurrentElement(elementName, id));
+		btnMouseEnterLeave.bind(element)(btnClass, colorMain, colorEnter);
+		currentColumn.append(element);
+		if (children) {
+			document.querySelector('.current-column > .column-name > .name').textContent = elementName;
+			getData(children, 'current');
 		}
-
-		const nextElementsArray = nextElements;
-		if (nextElementsArray) {
-			getData(nextElementsArray, 'next');
+		if (nextElements) {
+			getData(nextElements, 'next');
 		}
 	});
 };
 
 const renderNextElements = (array) => {
-	const nextColumn = document.querySelector('.next-column');
-
-	array.forEach(({ id, elementName, img, difficulty, previousElements, nextElements, parent, children }) => {
+	const nextColumn = document.querySelector('.next-column > .element-column');
+	array.forEach(({ id, elementName, nextElements, parent, children }) => {
 		const element = document.createElement('div');
 		element.classList.add('next-element');
-		// element.classList.add('variant');
-		//+класс 'card'
 		element.innerHTML = `
     <button class="preview-element-btn">${elementName}</button>
-    <button class="go-element-btn">Перейти</button>
-    `;
-		element.querySelector('.preview-element-btn').addEventListener('click', (event) => {
-			console.log(event.target);
-			document.querySelector('.next-column > .column-name').textContent = 'Вариант следующего элемента: ' + elementName;
-			// currentElementsId = ['0101', '0102', '0103', '0104'];
-			// getData(currentElementsId);
-			// Добавляем в корзину
-		});
-		element.querySelector('.go-element-btn').addEventListener('click', (event) => {
-			console.log(event.target);
+    <button class="go-element-btn">Перейти</button>`;
+		element.querySelector('.preview-element-btn').addEventListener('click', () => showNextElement(elementName, id));
+		btnMouseEnterLeave.bind(element)('preview-element-btn', '#A0DCBE', '#6edfa6');
+		btnMouseEnterLeave.bind(element)('go-element-btn', '#FAFABE', '#f5f591');
+
+		element.querySelector('.go-element-btn').addEventListener('click', () => {
+			clearColumns();
+			showCurrentElement(elementName, id);
+			getData([id], 'current');
 		});
 
-		nextColumn.append(element); // Добавляем в конец меню ресторана
-
-		// const childrenArray = children;
-		// if (childrenArray) {
-		// 	getData(childrenArray, 'current');
-		// }
-
-		// const nextElements = nextElements;
-		// if (nextElements) {
-		// 	getData(nextElements, 'next');
-		// }
+		nextColumn.append(element);
 	});
 };
 
-// setTimeout(() => {
-// 	const currentColumn = document.querySelector('.next-column');
-// 	currentColumn.innerHTML = '';
-// }, 3000);
+columnName.forEach((item) => {
+	item.addEventListener('click', restart);
+});
 
-// console.log('~ currentElementBtnAll', currentElementBtnAll);
-// currentElementBtnAll.forEach((item) => {
-// 	// console.log(item);
-// });
-// console.log('~ nextElementBtnAll', nextElementBtnAll);
-// nextElementBtnAll.forEach((item) => {
-// 	// console.log(item);
-// });
-
-currentColumn.innerHTML = '';
-nextColumn.innerHTML = '';
-currentElementsId = ['0101'];
-getData(currentElementsId, 'current');
-
-// console.log('~ currentVideo', currentVideo);
-// console.log(currentVideo.getAttribute('src'));
+restart();

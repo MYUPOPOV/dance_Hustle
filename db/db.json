@@ -1,73 +1,118 @@
 {
   "db": [
     {
-      "id" : "0101",
+      "id" : "01001",
       "elementName": "Базовый шаг",
-      "nextElements": ["0201"],
-      "parent": "",
-      "children": ["0102", "0103", "0104"]  
+      "nextElements": ["02001", "03001"]
     },
     {
-      "id" : "0102",
+      "id" : "01002",
       "elementName": "Шарфик",
-      "nextElements": [],
-      "parent": "0101",
-      "children": ""  
+      "nextElements": []
     },
     {
-      "id" : "0103",
+      "id" : "01003",
       "elementName": "Спин Поворот",
-      "img": "",
-      "difficulty": "simple",
-      "previousElements": [],
-      "nextElements": [],
-      "parent": "0101",
-      "children": ""  
+      "nextElements": []
     },
     {
-      "id" : "0104",
+      "id" : "01004",
       "elementName": "Верхняя сменка",
-      "img": "",
-      "difficulty": "simple",
-      "previousElements": [],
-      "nextElements": [],
-      "parent": "0101",
-      "children": ""  
+      "nextElements": []
     },
     {
-      "id" : "0105",
+      "id" : "01005",
       "elementName": "Сменка Вращение партнерши",
-      "img": "",
-      "difficulty": "simple",
-      "previousElements": [],
-      "nextElements": [],
-      "parent": "0101",
-      "children": ""  
+      "nextElements": []
     },
 
-
-
-
     {
-      "id" : "0201",
-      "elementName": "Нижняя сменка",
-      "img": "",
-      "difficulty": "simple",
-      "previousElements": ["0101"],
-      "nextElements": [],
-      "parent": "",
-      "children": ""  
+      "id" : "02001",
+      "elementName": "Нижняя сменка (заход в привет)",
+      "nextElements": ["04001"]
     },
     {
-      "id" : "0202",
+      "id" : "02002",
       "elementName": "Перехват в привет",
-      "img": "",
-      "difficulty": "simple",
-      "previousElements": [],
-      "nextElements": [],
-      "parent": "0201",
-      "children": ""  
+      "nextElements": []
+    },
+    {
+      "id" : "03001",
+      "elementName": "Заход в корзинку",
+      "nextElements": ["93001"]
+    },
+    {
+      "id" : "03002",
+      "elementName": "Смена положений",
+      "nextElements": []
+    },
+    {
+      "id" : "03003",
+      "elementName": "Смена направления в корзинке",
+      "nextElements": []
+    },
+    {
+      "id" : "03004",
+      "elementName": "Шаги в корзинке",
+      "nextElements": []
+    },
+    {
+      "id" : "03005",
+      "elementName": "Поддержка в корзинке",
+      "nextElements": []
+    },
+    {
+      "id" : "93001",
+      "elementName": "Выход из корзинки",
+      "nextElements": ["01001"]
+    },
+    {
+      "id" : "93002",
+      "elementName": "Выход из корзинки  в базовый шаг с пролазом партнерши",
+      "nextElements": []
+    },
+    {
+      "id" : "04001",
+      "elementName": "Заход в обратную теневую",
+      "nextElements": ["94001"]
+    },
+    {
+      "id" : "04002",
+      "elementName": "Обратная теневая с разножкой",
+      "nextElements": []
+    },
+    {
+      "id" : "04003",
+      "elementName": "Смена направления в обратной теневой",
+      "nextElements": []
+    },
+    {
+      "id" : "04004",
+      "elementName": "Шаги в обратной теневой",
+      "nextElements": []
+    },
+    {
+      "id" : "94001",
+      "elementName": "Выход из обратной теневой",
+      "nextElements": ["01001"]
+    },
+    {
+      "id" : "00000",
+      "elementName": "",
+      "nextElements": []
+    },
+    {
+      "id" : "00000",
+      "elementName": "",
+      "nextElements": []
+    },
+    {
+      "id" : "00000",
+      "elementName": "",
+      "nextElements": []
     }
+   
+
 
   ]
 

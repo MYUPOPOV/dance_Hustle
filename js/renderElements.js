@@ -8,6 +8,7 @@ const getData = (currentElementsId, order) => {
 		.then((res) => res.json())
 		.then((data) => {
 			const array = [];
+			// console.log(currentElementsId);
 			for (let keyId of currentElementsId) {
 				for (let keyDataDb of data.db) {
 					if (keyDataDb.id === keyId) {
@@ -17,6 +18,7 @@ const getData = (currentElementsId, order) => {
 			}
 			if (order === 'current') {
 				renderCurrentElements(array);
+				// console.log(array);
 			}
 			if (order === 'next') {
 				renderNextElements(array);
@@ -27,10 +29,26 @@ const getData = (currentElementsId, order) => {
 		});
 };
 
+const getChildren = (id) => {
+	fetch('db/db.json')
+		.then((res) => res.json())
+		.then((data) => {
+			const array = [];
+			for (let key of data.db) {
+				if (key.id.substring(0, 3) === id.substring(0, 3) && key.id.substring(3) !== '01') {
+					array.push(key.id);
+				}
+			}
+			// return array;
+			// console.log(array);
+			getData(array, 'current');
+		});
+};
+
 const restart = () => {
 	clearColumns();
-	showCurrentElement('Базовый шаг', '0101');
-	getData(['0101'], 'current');
+	showCurrentElement('Базовый шаг', '01001');
+	getData(['01001'], 'current');
 };
 
 const showCurrentElement = (elementName, id) => {
@@ -53,6 +71,8 @@ const clearColumns = () => {
 	nextColumnElements.innerHTML = '';
 	const nextVideo = document.querySelector('.next-column > .video > video');
 	nextVideo.setAttribute('src', `./db/mp4/0000.mp4`);
+	document.querySelector('.current-column > .column-name > .name').textContent = '';
+	document.querySelector('.next-column > .column-name > .name').textContent = '';
 };
 
 /* Анимация кнопок при наведении */
@@ -67,12 +87,12 @@ const btnMouseEnterLeave = function (btnClass, colorMain, colorEnter) {
 
 const renderCurrentElements = (array) => {
 	const currentColumn = document.querySelector('.current-column > .element-column');
-	array.forEach(({ id, elementName, nextElements, parent, children }) => {
+	array.forEach(({ id, elementName, nextElements }) => {
 		const element = document.createElement('div');
 		element.classList.add('current-element');
 
 		let btnClass, colorMain, colorEnter;
-		if (!parent) {
+		if (id.substring(3) === '01') {
 			btnClass = 'current-element-btn';
 			colorMain = '#A0DCBE';
 			colorEnter = '#6edfa6';
@@ -85,9 +105,9 @@ const renderCurrentElements = (array) => {
 		element.querySelector(`.${btnClass}`).addEventListener('click', () => showCurrentElement(elementName, id));
 		btnMouseEnterLeave.bind(element)(btnClass, colorMain, colorEnter);
 		currentColumn.append(element);
-		if (children) {
-			document.querySelector('.current-column > .column-name > .name').textContent = elementName;
-			getData(children, 'current');
+
+		if (id.substring(3) === '01') {
+			getChildren(id);
 		}
 		if (nextElements) {
 			getData(nextElements, 'next');
@@ -97,7 +117,7 @@ const renderCurrentElements = (array) => {
 
 const renderNextElements = (array) => {
 	const nextColumn = document.querySelector('.next-column > .element-column');
-	array.forEach(({ id, elementName, nextElements, parent, children }) => {
+	array.forEach(({ id, elementName, nextElements }) => {
 		const element = document.createElement('div');
 		element.classList.add('next-element');
 		element.innerHTML = `

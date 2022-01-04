@@ -122,8 +122,12 @@ const renderNextElements = (array) => {
 		element.classList.add('next-element');
 		element.innerHTML = `
     <button class="preview-element-btn">${elementName}</button>
-    <button class="go-element-btn">Перейти</button>`;
-		element.querySelector('.preview-element-btn').addEventListener('click', () => showNextElement(elementName, id));
+    <button class="go-element-btn">Go</button>`;
+		// element.querySelector('.go-element-btn').style.display = 'none';
+		element.querySelector('.preview-element-btn').addEventListener('click', () => {
+			showNextElement(elementName, id);
+			// element.querySelector('.go-element-btn').style.display = 'block';
+		});
 		btnMouseEnterLeave.bind(element)('preview-element-btn', '#A0DCBE', '#6edfa6');
 		btnMouseEnterLeave.bind(element)('go-element-btn', '#FAFABE', '#f5f591');
 

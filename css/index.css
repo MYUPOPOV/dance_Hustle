@@ -1,6 +1,6 @@
 .column {
 	float: left;
-	width: 33.33%;
+	width: 50%;
 }
 
 /* Clear floats after the columns */
@@ -30,7 +30,7 @@ body {
 
 .video {
 	display: flex;
-	height: 300px;
+	height: 30vw;
 	border: solid 2px;
 	justify-content: center;
 	align-items: center;
@@ -39,6 +39,7 @@ body {
 }
 
 .video-frame {
+	width: 100%;
 	height: 100%;
 }
 
@@ -87,7 +88,7 @@ body {
 
 .go-element-btn {
 	height: 100%;
-	width: 19%;
+	width: 10%;
 	background: rgb(250, 250, 190);
 	border-radius: 10px;
 	font-weight: 400;

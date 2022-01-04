@@ -1,3 +1,7 @@
+html {
+	font-size: 18px;
+}
+
 .column {
 	float: left;
 	width: 50%;
@@ -87,7 +91,7 @@ body {
 
 .preview-element-btn {
 	height: 100%;
-	width: 80%;
+	width: 70%;
 	background: rgb(160, 220, 190);
 	border-radius: 10px;
 	font-weight: 400;
@@ -98,10 +102,10 @@ body {
 
 .go-element-btn {
 	height: 100%;
-	width: 10%;
+	width: 7%;
 	background: rgb(250, 250, 190);
 	border-radius: 10px;
 	font-weight: 400;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	white-space: nowrap;
 }

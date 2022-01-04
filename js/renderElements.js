@@ -149,3 +149,10 @@ columnName.forEach((item) => {
 });
 
 restart();
+
+if (window.innerWidth <= 763) {
+	console.log('~ window.innerWidth', window.innerWidth);
+	window.style.fontSize = '10px';
+} else {
+	window.style.fontSize = '18px';
+}

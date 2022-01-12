@@ -120,23 +120,39 @@ const renderNextElements = (array) => {
 	array.forEach(({ id, elementName, nextElements }) => {
 		const element = document.createElement('div');
 		element.classList.add('next-element');
+
 		element.innerHTML = `
-    <button class="preview-element-btn">${elementName}</button>
-    <button class="go-element-btn">Go</button>`;
+    <button class="next-element-btn">${elementName}</button>`;
+		// <button class="go-element-btn">Go</button>
 		// element.querySelector('.go-element-btn').style.display = 'none';
-		element.querySelector('.preview-element-btn').addEventListener('click', () => {
+		element.querySelector('.next-element-btn').addEventListener('click', (e) => {
 			showNextElement(elementName, id);
+			nextElementBtns = document.querySelectorAll('.next-element-btn');
+
+			if (!e.target.classList.contains('active')) {
+				nextElementBtns.forEach((item) => {
+					if (item !== e.target) {
+						item.classList.remove('active');
+					}
+				});
+				e.target.classList.add('active');
+			} else {
+				clearColumns();
+				showCurrentElement(elementName, id);
+				getData([id], 'current');
+			}
+
 			// element.querySelector('.go-element-btn').style.display = 'block';
 		});
-		btnMouseEnterLeave.bind(element)('preview-element-btn', '#A0DCBE', '#6edfa6');
-		btnMouseEnterLeave.bind(element)('go-element-btn', '#FAFABE', '#f5f591');
+		btnMouseEnterLeave.bind(element)('next-element-btn', '#A0DCBE', '#6edfa6');
+		// btnMouseEnterLeave.bind(element)('go-element-btn', '#FAFABE', '#f5f591');
 
 		/* Перезагрузка страницы при нажатии на шапку таблицы */
-		element.querySelector('.go-element-btn').addEventListener('click', () => {
-			clearColumns();
-			showCurrentElement(elementName, id);
-			getData([id], 'current');
-		});
+		// element.querySelector('.go-element-btn').addEventListener('click', () => {
+		// 	clearColumns();
+		// 	showCurrentElement(elementName, id);
+		// 	getData([id], 'current');
+		// });
 		nextColumn.append(element);
 	});
 };
@@ -149,10 +165,3 @@ columnName.forEach((item) => {
 });
 
 restart();
-
-if (window.innerWidth <= 763) {
-	console.log('~ window.innerWidth', window.innerWidth);
-	window.style.fontSize = '10px';
-} else {
-	window.style.fontSize = '18px';
-}

@@ -72,6 +72,7 @@ body {
 	width: 100%;
 	background: rgb(160, 220, 190);
 	/* background: #6edfa6; */
+	border: solid 1px;
 	border-radius: 10px;
 	font-weight: 400;
 	font-size: 1rem;
@@ -84,6 +85,7 @@ body {
 	width: 100%;
 	background: rgb(250, 250, 190);
 	/* background: #f5f591; */
+	border: solid 1px;
 	border-radius: 10px;
 	font-weight: 400;
 	font-size: 1rem;
@@ -97,10 +99,11 @@ body {
 	margin-top: 5px;
 }
 
-.preview-element-btn {
+.next-element-btn {
 	height: 100%;
-	width: 70%;
+	width: 100%;
 	background: rgb(160, 220, 190);
+	border: solid 1px;
 	border-radius: 10px;
 	font-weight: 400;
 	font-size: 1rem;
@@ -117,4 +120,10 @@ body {
 	font-size: 1rem;
 	white-space: nowrap;
 	text-overflow: ellipsis;
+}
+
+.active {
+	/* colorMain = '#A0DCBE'; */
+	background: #6edfa6;
+	border: solid 3px;
 }
